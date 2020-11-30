@@ -31,7 +31,7 @@ self.addEventListener("install", event => {
   console.log("installing...");
   event.waitUntil(
       caches
-          .open(cache_name)
+          .open(offlineAnylineJS)
           .then(cache => {
               return cache.addAll(assets);
           })
