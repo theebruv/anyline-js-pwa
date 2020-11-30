@@ -1,6 +1,6 @@
 const offlineAnylineJS = "offlineAnylineJS"
 const assets = [
-  "anyline-js-pwa/demo/index.html",
+  "/anyline-js-pwa/demo/index.html",
   "/anyline-js-pwa/demo/favicon.ico",
   "/anyline-js-pwa/demo/anyline.js",
   "/anyline-js-pwa/demo/index.css",
@@ -16,6 +16,7 @@ const assets = [
   "/anyline-js-pwa/demo/anylinejs/data_lpt.data",
   "/anyline-js-pwa/demo/anylinejs/data_meter.data",
   "/anyline-js-pwa/demo/anylinejs/data_ocr.data",
+  "/anyline-js-pwa/demo/",
 ]
 
 self.addEventListener("install", event => {
