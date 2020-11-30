@@ -6,13 +6,17 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <meta name="description" content="Anyline JS Demo" />
     <meta name="apple-mobile-web-app-status-bar" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+
     <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="manifest.json" />
 
     <link rel="apple-touch-icon" href="logo192.png" />
     <link rel="apple-touch-icon" href="logo512.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="../index.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
   </head>
 
   <body>
@@ -30,6 +34,21 @@
     <script src="../../anyline.js"></script>
     <script src="../license.js"></script>
     <script src="../index.js"></script>
+
+    <script>
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker
+            .register("/anyline-js-pwa/serviceWorker.js")
+            .then(res => { 
+              console.log("service worker registered! scope is:", res.scope); 
+            })
+            .catch(err => console.log("service worker not registered", err))
+        })
+      }
+
+    </script>
 
     <select class="preset-select" onchange="mountAnylineJS(this)">
       <option value="" selected>Select Use-Case</option>
