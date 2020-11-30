@@ -1,10 +1,10 @@
 const offlineAnylineJS = "offlineAnylineJS"
 const assets = [
   "/",
+  "/index.html",
   "/favicon.ico",
   "/anyline.js",
   "/index.css",
-  "/index.html",
   "/index.js",
   "/license.js",
   "/logo192.png",
