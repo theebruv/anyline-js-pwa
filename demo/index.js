@@ -1,5 +1,4 @@
 
-
 const { init, errorCodes } = window.anylinejs;
 
 const viewConfig = {
@@ -47,7 +46,7 @@ function mountAnylineJS(preset) {
     license: demoLicense,
     element: root,
     debugAnyline: true,
-    //anylinePath: '../../anylinejs'
+    anylinePath: './anylinejs'
   });
 
   let modalOpen = false;
