@@ -7,7 +7,6 @@ const assets = [
   "/index.html",
   "/index.js",
   "/license.js",
-  "/favicon.ico",
   "/logo192.png",
   "/logo512.png",
   "/anylinejs/anylinejs.js",
