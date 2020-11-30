@@ -4,7 +4,8 @@
   "description": "anyline sdk in the browser",
   "main": "anyline.js",
   "scripts": {
-    "demo": "npx http-server -S -C cert/cert.pem -K cert/key.pem -P 3000"
+    "demo": "npx http-server -S -C cert/cert.pem -K cert/key.pem -P 3000",
+    "deploy": "gh-pages -d demo"
   },
   "repository": {
     "type": "git",
