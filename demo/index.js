@@ -1,6 +1,10 @@
 
-
 const { init, errorCodes } = window.anylinejs;
+
+function getLicense() {
+  const deployed = window.location.hostname === 'anyline.github.io';
+  return deployed ? LICENSE.github : LICENSE.local;
+}
 
 const viewConfig = {
   // captureResolution: '1080p',
@@ -44,17 +48,17 @@ function mountAnylineJS(preset) {
     config: {},
     preset: preset.value,
     viewConfig,
-    license: demoLicense,
+    license: getLicense(),
     element: root,
     debugAnyline: true,
-    //anylinePath: '../../anylinejs'
+    anylinePath: '../anylinejs'
   });
 
   let modalOpen = false;
 
   Anyline.onResult = result => {
-    console.log('Result: ', result);
-    alert(JSON.stringify(result, null, 2))
+    console.log('Result: ', result.result);
+    alert(JSON.stringify(result.result, null, 2))
     // Anyline.stopScanning();
   };
 
@@ -85,16 +89,4 @@ function remountAnylineJS() {
   Anyline.stopScanning();
   Anyline.dispose();
   mountAnylineJS(selectedPreset);
-}
-
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then(res => { 
-        console.log("service worker registered"); 
-      })
-      .catch(err => console.log("service worker not registered", err))
-  })
 }
