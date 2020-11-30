@@ -57,8 +57,8 @@ function mountAnylineJS(preset) {
   let modalOpen = false;
 
   Anyline.onResult = result => {
-    console.log('Result: ', result);
-    alert(JSON.stringify(result, null, 2))
+    console.log('Result: ', result.result);
+    alert(JSON.stringify(result.result, null, 2))
     // Anyline.stopScanning();
   };
 
