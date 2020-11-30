@@ -16,16 +16,7 @@ const assets = [
   "/anyline-js-pwa/demo/anylinejs/data_lpt.data",
   "/anyline-js-pwa/demo/anylinejs/data_meter.data",
   "/anyline-js-pwa/demo/anylinejs/data_ocr.data",
-  "/anyline-js-pwa/demo/",
 ]
-
-// self.addEventListener("install", installEvent => {
-//   installEvent.waitUntil(
-//     caches.open(offlineAnylineJS).then(cache => {
-//       cache.addAll(assets)
-//     })
-//   )
-// })
 
 self.addEventListener("install", event => {
   console.log("installing...");
