@@ -1,0 +1,30 @@
+{
+  "name": "anyline-js",
+  "version": "1.0.2",
+  "description": "anyline sdk in the browser",
+  "main": "anyline.js",
+  "scripts": {
+    "demo": "npx http-server -S -C cert/cert.pem -K cert/key.pem -P 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anyline/anyline-ocr-anylinejs-module.git"
+  },
+  "keywords": [
+    "ocr",
+    "anyline",
+    "wasm",
+    "vision",
+    "scanner",
+    "reader"
+  ],
+  "author": "Matthias Klan <matthias.klan@anyline.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/Anyline/anyline-ocr-anylinejs-module/issues"
+  },
+  "homepage": "https://github.com/Anyline/anyline-ocr-anylinejs-module#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
