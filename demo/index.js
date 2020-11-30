@@ -1,6 +1,11 @@
 
 const { init, errorCodes } = window.anylinejs;
 
+function getLicense() {
+  const deployed = window.location.hostname === 'anyline.github.io';
+  return deployed ? LICENSE.github : LICENSE.local;
+}
+
 const viewConfig = {
   // captureResolution: '1080p',
   outerColor: '000000',
@@ -43,10 +48,10 @@ function mountAnylineJS(preset) {
     config: {},
     preset: preset.value,
     viewConfig,
-    license: demoLicense,
+    license: getLicense(),
     element: root,
     debugAnyline: true,
-    anylinePath: './anylinejs'
+    anylinePath: '../anylinejs'
   });
 
   let modalOpen = false;
