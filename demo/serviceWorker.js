@@ -1,6 +1,7 @@
 const offlineAnylineJS = "offlineAnylineJS"
 const assets = [
   "/anyline-js-pwa/demo/index.html",
+  "/anyline-js-pwa/demo/manifest.webmanifest",
   "/anyline-js-pwa/demo/favicon.ico",
   "/anyline-js-pwa/demo/anyline.js",
   "/anyline-js-pwa/demo/index.css",
