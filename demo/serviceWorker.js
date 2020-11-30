@@ -16,11 +16,19 @@ const assets = [
   "/anyline-js-pwa/demo/anylinejs/data_lpt.data",
   "/anyline-js-pwa/demo/anylinejs/data_meter.data",
   "/anyline-js-pwa/demo/anylinejs/data_ocr.data",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/anylinejs.js",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/anylinejs.wasm.gz",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/anylinejs2.wasm.gz",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/data_barcode.data",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/data_id.data",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/data_lpt.data",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/data_meter.data",
+  "/anyline-js-pwa/demo/anylinejs/anylinejs/data_ocr.data",
   "/anyline-js-pwa/demo/",
 ]
 
 self.addEventListener("install", event => {
-  console.log("installing...");
+  console.log("installing....");
   event.waitUntil(
       caches
           .open(offlineAnylineJS)
