@@ -1,6 +1,5 @@
 const offlineAnylineJS = "offlineAnylineJS"
 const assets = [
-  "/",
   "/index.html",
   "/favicon.ico",
   "/anyline.js",
@@ -17,16 +16,28 @@ const assets = [
   "/anylinejs/data_lpt.data",
   "/anylinejs/data_meter.data",
   "/anylinejs/data_ocr.data",
- 
+  "/",
 ]
 
-self.addEventListener("install", installEvent => {
-  installEvent.waitUntil(
-    caches.open(offlineAnylineJS).then(cache => {
-      cache.addAll(assets)
-    })
-  )
-})
+// self.addEventListener("install", installEvent => {
+//   installEvent.waitUntil(
+//     caches.open(offlineAnylineJS).then(cache => {
+//       cache.addAll(assets)
+//     })
+//   )
+// })
+
+self.addEventListener("install", event => {
+  console.log("installing...");
+  event.waitUntil(
+      caches
+          .open(cache_name)
+          .then(cache => {
+              return cache.addAll(assets);
+          })
+          .catch(err => console.log(err))
+  );
+});
 
 self.addEventListener("fetch", fetchEvent => {
     fetchEvent.respondWith(
