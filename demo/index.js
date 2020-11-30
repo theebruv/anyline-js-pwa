@@ -91,7 +91,7 @@ function remountAnylineJS() {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("serviceWorker.js")
+      .register("/anyline-js-pwa/serviceWorker.js")
       .then(res => { 
         console.log("service worker registered"); 
       })
