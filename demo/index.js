@@ -7,20 +7,12 @@ function getLicense() {
 }
 
 const viewConfig = {
-  // captureResolution: '1080p',
   outerColor: '000000',
   outerAlpha: 0.5,
   cutouts: [
     {
+      cancelOnResult: false,
       cutoutConfig: {
-        // style: 'rect',
-        maxWidthPercent: '80%',
-        alignment: 'top_half',
-        ratioFromSize: {
-          width: 300,
-          height: 250,
-        },
-        width: 720,
         strokeWidth: 2,
         cornerRadius: 4,
         strokeColor: 'FFFFFFFF',
@@ -32,8 +24,6 @@ const viewConfig = {
         fillColor: '300099FF',
         strokeWidth: 2,
         cornerRadius: 4,
-        animationDuration: 150,
-        animation: 'NONE',
       },
     },
   ],
@@ -41,10 +31,14 @@ const viewConfig = {
 
 const root = document.getElementById('root');
 let selectedPreset = undefined;
+let Anyline;
 
 function mountAnylineJS(preset) {
+  try{
+
   selectedPreset = preset;
-  const Anyline = init({
+
+  Anyline = window.anylinejs.init({
     config: {},
     preset: preset.value,
     viewConfig,
@@ -54,24 +48,13 @@ function mountAnylineJS(preset) {
     anylinePath: '../anylinejs'
   });
 
-  let modalOpen = false;
-
   Anyline.onResult = result => {
-    console.log('Result: ', result.result);
+    console.log('Result: ', result);
     alert(JSON.stringify(result.result, null, 2))
-    // Anyline.stopScanning();
-  };
-
-  Anyline.onReport = msg => {
-    console.log('Report: ', msg);
-  };
-
-  Anyline.onDebug = msg => {
-    alert(JSON.stringify(msg));
   };
 
   Anyline.onError = ({ code, message }) => {
-    if (code === errorCodes.WEBCAM_ERROR) {
+    if (code === window.anylinejs.errorCodes.WEBCAM_ERROR) {
       console.error('webcam error: ', message);
     }
   };
@@ -80,13 +63,25 @@ function mountAnylineJS(preset) {
     console.log('ANYLINE LOADED on main thread');
   };
 
-  Anyline.startScanning();
+  
+  Anyline.startScanning().catch(e => alert(e.message))
 
-  window.Anyline = Anyline;
+}catch(e){
+  alert(e.message);
+  console.error(e)
+}
 }
 
 function remountAnylineJS() {
   Anyline.stopScanning();
   Anyline.dispose();
   mountAnylineJS(selectedPreset);
+}
+
+function enableFlash() {
+  Anyline.activateFlash(true);
+}
+
+function disableFlash() {
+  Anyline.activateFlash(false);
 }
