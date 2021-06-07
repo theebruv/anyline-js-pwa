@@ -1,7 +1,7 @@
 {
-  "name": "anyline-js",
-  "version": "1.0.2",
-  "description": "anyline sdk in the browser",
+  "name": "anyline-js-pwa",
+  "version": "31.0.0",
+  "description": "anyline sdk as pwa",
   "scripts": {
     "demo": "npx http-server -S -C cert/cert.pem -K cert/key.pem -P 3000",
     "deploy": "gh-pages -d ."
