@@ -1,6 +1,6 @@
 {
   "name": "anyline-js-pwa",
-  "version": "31.0.0",
+  "version": "36.1.1",
   "description": "anyline sdk as pwa",
   "scripts": {
     "demo": "npx http-server -S -C cert/cert.pem -K cert/key.pem -P 3000",
